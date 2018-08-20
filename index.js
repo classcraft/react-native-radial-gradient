@@ -18,7 +18,8 @@ export default class RadialGradient extends Component {
             stops,
             center,
             radius,
-            style,
+			style,
+			rotateZ,
             ...otherProps
         } = this.props;
 
@@ -26,7 +27,7 @@ export default class RadialGradient extends Component {
         return (
             <View ref={(component) => { this.gradientRef = component; }} {...otherProps} style={style}>
                 <NativeRadialGradient
-                    style={{position: 'absolute', top: 0, left: 0, bottom: 0, right: 0}}
+                    style={{position: 'absolute', top: 0, left: 0, bottom: 0, right: 0, transform: [{rotateZ}]}}
                     colors={(colors)?colors.map(processColor):null}
                     center={center}
                     radius={radius}
