@@ -110,7 +110,7 @@ public class GradientView extends View {
     }
 
     private void drawGradient(){
-        if(centerX<0 || centerY<0 || radius <=0 || colors==null || colors.length <=0)
+        if(centerX==null || centerY==null || radius <=0 || colors==null || colors.length <=0)
             return;
         if(stops!=null && stops.length != colors.length)
             stops = null;
@@ -124,7 +124,7 @@ public class GradientView extends View {
     protected void onSizeChanged(int w, int h, int oldw, int oldh) {
         super.onSizeChanged(w, h, oldw, oldh);
         bounds.set(0f, 0f, w, h);
-        populateDefaultCenterValue(w,h);
+        // populateDefaultCenterValue(w,h);
         drawGradient();
     }
 
