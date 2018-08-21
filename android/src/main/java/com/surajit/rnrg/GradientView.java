@@ -110,7 +110,7 @@ public class GradientView extends View {
     }
 
     private void drawGradient(){
-        if(centerX==null || centerY==null || radius <=0 || colors==null || colors.length <=0)
+        if(radius <=0 || colors==null || colors.length <=0)
             return;
         if(stops!=null && stops.length != colors.length)
             stops = null;
